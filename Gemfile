@@ -4,6 +4,7 @@ gem 'rails', '5.0.0.beta2'
 gem 'sprockets-rails', github: "rails/sprockets-rails"
 
 gem 'sqlite3'
+gem 'uuidtools'
 gem 'redis'
 gem 'puma'
 

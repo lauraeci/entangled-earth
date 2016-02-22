@@ -1,0 +1,41 @@
+<p>
+  Hello <%= @current_user.name %>
+  (<%= link_to 'Logout', session_path, method: :delete %>)!
+</p>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Player1</th>
+      <th>Player2</th>
+      <th>Objective count</th>
+      <th>Winner</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.level %></td>
+        <td><%= game.player1 %></td>
+        <td><%= game.player2 %></td>
+        <td><%= game.objective_count %></td>
+        <td><%= game.winner %></td>
+        <td><%= link_to 'Show', game %></td>
+        <td><%= link_to 'Join', join_path(game) %></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game', new_game_path %>
+</br>
+

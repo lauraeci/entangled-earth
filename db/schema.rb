@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711103112) do
+ActiveRecord::Schema.define(version: 20160222054730) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "message_id"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20150711103112) do
     t.datetime "updated_at", null: false
     t.index ["message_id"], name: "index_comments_on_message_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string   "level",           limit: 36, null: false
+    t.string   "player1",         limit: 36, null: false
+    t.string   "player2",         limit: 36, null: false
+    t.integer  "objective_count"
+    t.string   "winner",          limit: 36, null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "messages", force: :cascade do |t|
