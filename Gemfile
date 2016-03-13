@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '5.0.0.beta2'
+gem 'rails', '5.0.0.beta3'
 gem 'sprockets-rails', github: "rails/sprockets-rails"
 
 gem 'sqlite3'
@@ -14,7 +14,7 @@ gem 'coffee-rails', github: "rails/coffee-rails"
 gem 'jquery-rails'
 gem 'turbolinks', github: "rails/turbolinks"
 
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.4.1'
 
 group :development, :test do
   gem 'byebug'
