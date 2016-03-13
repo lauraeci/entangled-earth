@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cost Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cost_types.each do |cost_type| %>
+      <tr>
+        <td><%= link_to 'Show', cost_type %></td>
+        <td><%= link_to 'Edit', edit_cost_type_path(cost_type) %></td>
+        <td><%= link_to 'Destroy', cost_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cost Type', new_cost_type_path %>
