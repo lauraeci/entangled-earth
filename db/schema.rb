@@ -11,11 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313195533) do
+ActiveRecord::Schema.define(version: 20160320192808) do
 
   create_table "accomplishments", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "i_accomplished"
+    t.datetime "on"
+    t.string   "totem_file_name"
+    t.string   "totem_content_type"
+    t.integer  "totem_file_size"
+    t.datetime "totem_updated_at"
   end
 
   create_table "comments", force: :cascade do |t|
@@ -54,6 +60,11 @@ ActiveRecord::Schema.define(version: 20160313195533) do
   end
 
   create_table "goals", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "interests", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

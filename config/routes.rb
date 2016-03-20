@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :interests
   resources :cost_types
   resources :costs
   resources :todo_items
@@ -11,11 +12,11 @@ Rails.application.routes.draw do
   resources :accomplishments
   resources :games
   match '/games/:id/join' => 'games#join',   via: [:patch], as: :join
-  resource  :session
-  resources :examples
+  resource  :session, only: [:new, :create, :destroy]
+  resources :examples, only: [:index]
 
-  resources :messages do
-    resources :comments
+  resources :messages, only: [:show, :index] do
+    resources :comments, only: [:create]
   end
 
   root 'examples#index'

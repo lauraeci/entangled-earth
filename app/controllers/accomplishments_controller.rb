@@ -69,6 +69,6 @@ class AccomplishmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accomplishment_params
-      params[:accomplishment]
+      params[:accomplishment].permit(:i_accomplished, :on, :totem)
     end
 end
